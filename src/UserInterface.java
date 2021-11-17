@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -99,21 +98,13 @@ public class UserInterface {
 
         String direction = ch=='a'?"ASC":(ch=='d'?"DESC":"TOGGLE");
 
-        if(ch == 'n') {
-            application.sortBy("name", direction);
-        } else if(ch == 't') {
-            application.sortBy("type", direction);
-        } else if(ch == 'a') {
-            application.sortBy("age", direction);
-        }
-
 
         if(sortBy == 'n') {
-            application.sortBy("name");
+            application.sortBy("name", direction);
         } else if(sortBy == 't') {
-            application.sortBy("type");
+            application.sortBy("type", direction);
         } else if(sortBy == 'a') {
-            application.sortBy("age");
+            application.sortBy("age", direction);
         }
 
         // When sorted, show the list again

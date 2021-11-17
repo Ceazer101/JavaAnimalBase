@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AnimalBase {
 
     private ArrayList<Animal> animals;
+    private SuperFlexibleComparator comparator = new SuperFlexibleComparator("name", "ASC");
 
     public AnimalBase() {
         animals = new ArrayList<>();
@@ -22,9 +24,11 @@ public class AnimalBase {
         return animals;
     }
 
-    public void sortBy(String sort) {
-        // TODO: Implement sorting!
-        System.out.println("TODO: Sort the list of animals by: " + sort);
+    public void sortBy(String sort, String direction) {
+        System.out.println("Sort the list of animals by: " + sort);
+        comparator.setType(sort);
+        comparator.setDirection(direction);
+        Collections.sort(animals, comparator);
     }
 
     public void createNewAnimal(String name, String description, String type, int age) {
@@ -50,7 +54,6 @@ public class AnimalBase {
         }
         return null;
     }
-
 
     public void loadDatabase() {
         System.err.println("LOAD not yet implemented!");

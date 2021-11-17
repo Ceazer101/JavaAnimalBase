@@ -15,11 +15,17 @@ public class Animal {
         return name;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return name + " the " + desc + " " + type + ", age " + age;
     }
-
-
 
 }
